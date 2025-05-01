@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>E COMMERCE</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jewelry Aura</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+
+    body {
+
+      font-family: 'Arial', sans-serif;
+
+      background-color: #f9f9f9;
+
+      color: #333;
+
+    }
+
+    .navbar {
+
+      background-color: #1f1f1f;
+
+      padding: 1rem 2rem;
+
+    }
+
+    .navbar-brand {
+
+      color: #fff;
+
+      font-size: 1.5rem;
+
+      font-weight: 600;
+
+    }
+
+    .navbar .form-control {
+
+      border-radius: 50px;
+
+      border: 2px solid #fff;
+
+      padding: 0.5rem 1.5rem;
+
+    }
+
+    .navbar i {
+
+      color: #fff;
+
+      font-size: 1.5rem;
+
+      margin-left: 1rem;
+
+    }
+
+    .container-fluid {
+
+      padding: 3rem 2rem;
+
+    }
+
+    .card {
+
+      border: none;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .card:hover {
+
+      transform: scale(1.05);
+
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .product-card {
+
+      position: relative;
+
+    }
+
+    .product-card img {
+
+      border-radius: 12px;
+
+      transition: transform 0.3s ease;
+
+    }
+
+    .product-card:hover img {
+
+      transform: scale(1.1);
+
+    }
+
+    .product-overlay {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      background: rgba(0, 0, 0, 0.5);
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      opacity: 0;
+
+      transition: opacity 0.3s ease;
+
+      border-radius: 12px;
+
+    }
+
+    .product-card:hover .product-overlay {
+
+      opacity: 1;
+
+    }
+
+    .product-overlay a {
+
+      color: #fff;
+
+      font-size: 1.2rem;
+
+      font-weight: bold;
+
+      text-decoration: underline;
+
+    }
+
+    .card-body {
+
+      background-color: #fff;
+
+      padding: 1.5rem;
+
+      text-align: center;
+
+      border-radius: 12px;
+
+    }
+
+    .card-title {
+
+      font-size: 1.25rem;
+
+      font-weight: 500;
+
+    }
+
+    .card-body p {
+
+      color: #555;
+
+      font-size: 1rem;
+
+      margin: 0.5rem 0;
+
+    }
+
+    .btn-primary {
+
+      background-color: #1f1f1f;
+
+      border-color: #1f1f1f;
+
+      padding: 0.5rem 1.25rem;
+
+      border-radius: 50px;
+
+      font-weight: 600;
+
+    }
+
+    .btn-primary:hover {
+
+      background-color: #444;
+
+      border-color: #444;
+
+    }
+
+    .filters {
+
+      background-color: #fff;
+
+      padding: 1.5rem;
+
+      border-radius: 12px;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .filters h5 {
+
+      font-size: 1.25rem;
+
+      font-weight: 600;
+
+      color: #1f1f1f;
+
+    }
+
+    .filters hr {
+
+      border: 1px solid #f0f0f0;
+
+    }
+
+    .pagination .page-link {
+
+      border-radius: 50px;
+
+      background-color: #fff;
+
+      color: #1f1f1f;
+
+      padding: 0.5rem 1rem;
+
+      font-weight: 500;
+
+    }
+
+    .pagination .page-link:hover {
+
+      background-color: #1f1f1f;
+
+      color: #fff;
+
+    }
+
+    .pagination .active .page-link {
+
+      background-color: #1f1f1f;
+
+      color: #fff;
+
+      font-weight: bold;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+
+  <a class="navbar-brand" href="#">Jewelry Aura</a>
+
+  <div class="ms-auto d-flex align-items-center">
+
+    <input class="form-control me-2" type="search" placeholder="Search">
+
+    <i class="fas fa-shopping-cart"></i>
+
+  </div>
+
+</nav>
+
+<div class="container-fluid mt-4">
+
+  <div class="row">
+
+    <div class="col-md-3 d-none d-md-block filters">
+
+      <h5>Filters</h5>
+
+      <hr>
+
+      <h6>Categories</h6>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="necklaces">
+
+        <label class="form-check-label" for="necklaces">Necklaces</label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="rings">
+
+        <label class="form-check-label" for="rings">Rings</label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="earrings">
+
+        <label class="form-check-label" for="earrings">Earrings</label>
+
+      </div>
+
+      <hr>
+
+      <h6>Price Range</h6>
+
+      <input type="number" class="form-control mb-2" placeholder="Min Price">
+
+      <input type="number" class="form-control" placeholder="Max Price">
+
+      <hr>
+
+      <h6>Brands</h6>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="brand1">
+
+        <label class="form-check-label" for="brand1">LuxeLine</label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="brand2">
+
+        <label class="form-check-label" for="brand2">Shiny Gem</label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input" type="checkbox" id="brand3">
+
+        <label class="form-check-label" for="brand3">Crystal Craft</label>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-9">
+
+  <div class="row g-4">
+
+    
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/b2p2pam.jpeg" class="card-img-top" alt="Luna Crescent Necklace">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Luna Crescent Necklace</h6>
+
+          <p>$39.99</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/S1REvdW.jpeg" class="card-img-top" alt="Aurora Gem Choker">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Aurora Gem Choker</h6>
+
+          <p>$42.50</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/92OPBDC.jpeg" class="card-img-top" alt="Solara Pendant Chain">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Solara Pendant Chain</h6>
+
+          <p>$35.00</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/KzWzrw2.jpeg" class="card-img-top" alt="Celeste Layered Necklace">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Celeste Layered Necklace</h6>
+
+          <p>$47.99</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/xbwkd0O.jpeg" class="card-img-top" alt="Ivy Pearl Earring">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Ivy Pearl Earring</h6>
+
+          <p>$28.90</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/b3Zq1Gs.jpeg" class="card-img-top" alt="Moon Opal Ring">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Moon Opal Ring</h6>
+
+          <p>$31.25</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/NBMll8z.jpeg" class="card-img-top" alt="Stellar Halo Band">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Stellar Halo Band</h6>
+
+          <p>$38.40</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3">
+
+      <div class="card product-card">
+
+        <img src="https://i.imgur.com/a68IBsJ.jpeg" class="card-img-top" alt="Eclipse Charm Strand">
+
+        <div class="product-overlay">
+
+          <a href="#">View Details</a>
+
+        </div>
+
+        <div class="card-body text-center">
+
+          <h6 class="card-title">Eclipse Charm Strand</h6>
+
+          <p>$45.00</p>
+
+          <button class="btn btn-primary btn-sm w-100 w-md-auto">Add to Cart</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+      <nav aria-label="Page navigation" class="mt-4">
+
+        <ul class="pagination justify-content-center">
+
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
